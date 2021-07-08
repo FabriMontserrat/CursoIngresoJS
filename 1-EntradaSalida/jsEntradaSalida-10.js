@@ -7,11 +7,30 @@ function mostrarAumento()
 {
 	var sueldo;
 	var resultado;
+	var descuento;
 
 	sueldo = txtIdImporte.value;
 
+	
+	descuento = prompt ("Ingrese descuento");
+
 	sueldo = parseInt(sueldo);
-	resultado = (sueldo * 0.75);
+	resultado = (sueldo - (sueldo / 100 * descuento));
 
 	document.getElementById("txtIdResultado").value = (resultado);
 }
+
+
+/*
+	var sueldo;
+	var resultado;
+
+	sueldo = txtIdImporte.value;
+
+
+	sueldo = parseInt(sueldo);
+	resultado = (sueldo * 0.75 );
+
+	document.getElementById("txtIdResultado").value = (resultado);
+
+	*/
