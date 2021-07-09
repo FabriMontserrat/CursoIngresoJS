@@ -1,4 +1,4 @@
-/*
+451/*
 Debemos lograr tomar el importe por ID.
 Transformarlo a entero (parseInt), luego
 mostrar el importe con un Descuento del 25 %
@@ -29,7 +29,7 @@ function mostrarAumento()
 
 
 	sueldo = parseInt(sueldo);
-	resultado = (sueldo * 0.75 );
+	resultado = (sueldo * 0.75 );451
 
 	document.getElementById("txtIdResultado").value = (resultado);
 
