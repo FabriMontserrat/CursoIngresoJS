@@ -10,5 +10,86 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
- 	
+ 	var cantidadLamparas
+    var marcaLamparas
+    var precio
+    var descuento
+    var precioConDescuento
+
+    cantidadLamparas = txtIdCantidad.value
+    cantidadLamparas = parseInt(cantidadLamparas)
+    precio = (cantidadLamparas * 35)
+    marcaLamparas = document.getElementById("Marca").value
+
+    if (cantidadLamparas > 5) 
+    {
+        descuento = 0.5
+        document.getElementById("txtIdprecioDescuento").value = (precio * descuento)
+    }
+
+    else       
+        if (cantidadLamparas == 5) 
+        {
+            if (marcaLamparas == "ArgentinaLuz") 
+            {
+            descuento = 0.6
+            document.getElementById("txtIdprecioDescuento").value = (precio * descuento)
+            }
+            else
+                {
+                descuento = 0.7
+                precioConDescuento = precio*descuento
+                document.getElementById("txtIdprecioDescuento").value= precioConDescuento.toFixed(2)
+                }
+        }
+        else
+            if (cantidadLamparas == 4) 
+            {
+                if (marcaLamparas == "ArgentinaLuz" || marcaLamparas == "FelipeLamparas") 
+                {
+                descuento = 0.75
+                precioConDescuento = precio * descuento
+                document.getElementById("txtIdprecioDescuento").value= precioConDescuento.toFixed(2)
+                }
+                else
+                    {
+                    descuento = 0.8
+                    precioConDescuento = precio * descuento
+                    document.getElementById("txtIdprecioDescuento").value= precioConDescuento.toFixed(2)
+                    }
+            }
+            else
+                if (cantidadLamparas == 3) 
+                {
+                    if (marcaLamparas == "ArgentinaLuz") 
+                    {
+                    descuento = 0.85
+                    precioConDescuento = precio * descuento
+                    document.getElementById("txtIdprecioDescuento").value= precioConDescuento.toFixed(2) 
+                    }
+                    else
+                        if (marcaLamparas == "FelipeLamparas") 
+                        {
+                        descuento = 0.90
+                        precioConDescuento = precio * descuento
+                        document.getElementById("txtIdprecioDescuento").value= precioConDescuento.toFixed(2)
+                        }
+
+                        else
+                        {
+                        descuento = 0.95
+                        precioConDescuento = precio * descuento
+                        document.getElementById("txtIdprecioDescuento").value= precioConDescuento.toFixed(2)
+                        }
+                }
+                else
+                    {
+                    document.getElementById("txtIdprecioDescuento").value = cantidadLamparas * precio  
+                    }
+if (document.getElementById("txtIdprecioDescuento").value > 120) 
+    {
+        var ingresosBrutos
+        ingresosBrutos = txtIdprecioDescuento.value * 1.10
+        alert("IIBB Usted pago: " + ingresosBrutos.toFixed(2))
+    }   
 }
